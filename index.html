@@ -131,6 +131,73 @@
             transform: scale(0.98);
         }
         
+        /* Falling Leaves Animation */
+        .leaf {
+            position: absolute;
+            font-size: 3.5rem;
+            animation: fall linear infinite;
+            opacity: 0.7;
+        }
+        
+        @keyframes fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .leaf-1 {
+            left: 10%;
+            animation-duration: 8s;
+            animation-delay: 0s;
+        }
+        
+        .leaf-2 {
+            left: 20%;
+            animation-duration: 10s;
+            animation-delay: 2s;
+        }
+        
+        .leaf-3 {
+            left: 30%;
+            animation-duration: 7s;
+            animation-delay: 4s;
+        }
+        
+        .leaf-4 {
+            left: 40%;
+            animation-duration: 9s;
+            animation-delay: 1s;
+        }
+        
+        .leaf-5 {
+            left: 50%;
+            animation-duration: 11s;
+            animation-delay: 3s;
+        }
+        
+        .leaf-6 {
+            left: 60%;
+            animation-duration: 8s;
+            animation-delay: 5s;
+        }
+        
+        .leaf-7 {
+            left: 70%;
+            animation-duration: 9s;
+            animation-delay: 0.5s;
+        }
+        
+        .leaf-8 {
+            left: 80%;
+            animation-duration: 10s;
+            animation-delay: 2.5s;
+        }
+        
         /* Mobile Responsive Changes */
         @media (max-width: 768px) {
             .section {
@@ -225,8 +292,20 @@
     </nav>
 
     <!-- Home Section -->
-    <section id="home" class="section bg-gradient-to-r from-green-600 to-green-500">
-        <div class="container mx-auto px-6">
+    <section id="home" class="section bg-gradient-to-r from-green-600 to-green-500 relative overflow-hidden">
+        <!-- Falling Leaves Animation -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="leaf leaf-1">🍃</div>
+            <div class="leaf leaf-2">🍂</div>
+            <div class="leaf leaf-3">🍃</div>
+            <div class="leaf leaf-4">🍂</div>
+            <div class="leaf leaf-5">🍃</div>
+            <div class="leaf leaf-6">🍂</div>
+            <div class="leaf leaf-7">🍃</div>
+            <div class="leaf leaf-8">🍂</div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
             <div class="flex flex-col md:flex-row items-center justify-between gap-12">
                 <!-- Content -->
                 <div class="hero-text md:w-1/2">
