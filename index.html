@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlanta Lawn Care & Contracting LLC | Professional Lawn Services</title>
+    <meta name="description" content="Professional lawn care and contracting services in Atlanta. Get expert lawn maintenance, sod installation, yard cleanup, and hardscaping services.">
+    <meta name="keywords" content="Atlanta Lawn Care, Atlanta Yard Services, Lawn Maintenance Atlanta, Contracting Services in Atlanta">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .floating-animation {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            overflow-x: hidden;
+        }
+        
+        .section {
+            width: 100%;
+            min-height: 100vh;
+            padding: 100px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-item {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: rgba(74, 222, 128, 0.3);
+        }
+        
+        .gallery-card {
+            transition: transform 0.3s ease;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+        
+        .gallery-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-card img {
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .contact-input {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .contact-input:focus {
+            border-color: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+        }
+        
+        .button-scale {
+            transition: all 0.3s ease;
+        }
+        
+        .button-scale:hover {
+            transform: scale(1.02);
+        }
+        
+        .button-scale:active {
+            transform: scale(0.98);
+        }
+        
+        /* Mobile Responsive Changes */
+        @media (max-width: 768px) {
+            .section {
+                padding: 80px 0;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .hero-text, .hero-image {
+                width: 100% !important;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .testimonial-card {
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        /* Scroll padding for fixed header */
+        html {
+            scroll-padding-top: 80px;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 px-6 py-4 bg-green-600 shadow-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold text-white flex items-center">
+                <!-- Custom Lawn Mower SVG Icon -->
+                <div class="h-10 w-10 mr-3 bg-white rounded-full p-2 flex items-center justify-center">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
+                        <!-- Lawn Mower Body -->
+                        <rect x="12" y="35" width="40" height="12" rx="6" fill="#2E7D32"/>
+                        <!-- Handle -->
+                        <rect x="30" y="20" width="4" height="20" rx="2" fill="#4CAF50"/>
+                        <rect x="25" y="15" width="14" height="3" rx="1.5" fill="#4CAF50"/>
+                        <!-- Wheels -->
+                        <circle cx="20" cy="50" r="5" fill="#263238"/>
+                        <circle cx="44" cy="50" r="5" fill="#263238"/>
+                        <!-- Grass Catcher -->
+                        <rect x="8" y="30" width="8" height="8" rx="4" fill="#81C784"/>
+                        <!-- Cutting Deck -->
+                        <rect x="16" y="40" width="32" height="2" rx="1" fill="#1B5E20"/>
+                    </svg>
+                </div>
+                <span class="text-white">Atlanta <span class="text-green-200">Lawn Care</span></span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="nav-link text-white font-bold">Home</a>
+                <a href="#services" class="nav-link text-white font-bold">Services</a>
+                <a href="#area" class="nav-link text-white font-bold">Service Area</a>
+                <a href="#gallery" class="nav-link text-white font-bold">Gallery</a>
+                <a href="#about" class="nav-link text-white font-bold">About</a>
+                <a href="#testimonials" class="nav-link text-white font-bold">Testimonials</a>
+                <a href="#contact" class="bg-white text-green-600 hover:bg-green-50 px-6 py-2 rounded-full font-bold transition-all shadow-md hover:shadow-lg">Get Free Quote</a>
+            </div>
+            
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden fixed w-full left-0 bg-green-600 shadow-lg hidden z-40" style="top: 68px;">
+            <div class="flex flex-col space-y-4 px-6 py-4">
+                <a href="#home" class="text-white hover:text-green-200 transition font-bold py-2">Home</a>
+                <a href="#services" class="text-white hover:text-green-200 transition font-bold py-2">Services</a>
+                <a href="#area" class="text-white hover:text-green-200 transition font-bold py-2">Service Area</a>
+                <a href="#gallery" class="text-white hover:text-green-200 transition font-bold py-2">Gallery</a>
+                <a href="#about" class="text-white hover:text-green-200 transition font-bold py-2">About</a>
+                <a href="#testimonials" class="text-white hover:text-green-200 transition font-bold py-2">Testimonials</a>
+                <a href="#contact" class="text-white hover:text-green-200 transition font-bold py-2">Contact</a>
+                <a href="#contact" class="bg-white text-green-600 hover:bg-green-50 px-6 py-3 rounded-full font-bold transition-all text-center mt-2">Get Free Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section bg-gradient-to-r from-green-600 to-green-500">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <!-- Content -->
+                <div class="hero-text md:w-1/2">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
+                        Transform Your Yard With <span class="text-green-200">Professional Lawn Care</span>
+                    </h1>
+                    <p class="text-xl text-green-100 mb-8 max-w-xl">
+                        Premium lawn care & custom landscaping services in Atlanta. Let us handle the hard work so you can enjoy your beautiful outdoor space.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 hero-buttons">
+                        <a href="#contact" class="bg-white text-green-600 hover:bg-green-50 px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg">
+                            Get Free Quote
+                        </a>
+                        <a href="tel:+14045551234" class="border-2 border-white text-white hover:bg-white hover:text-green-600 px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105 flex items-center">
+                            <i class="fas fa-phone mr-2"></i> (404) 555-1234
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image -->
+                <div class="hero-image md:w-1/2 relative">
+                    <div class="bg-white rounded-xl shadow-2xl p-2 floating-animation overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Beautiful lawn maintained by professionals" 
+                             class="w-full h-auto rounded-lg">
+                    </div>
+                    <!-- Decorative elements -->
+                    <div class="absolute -top-4 -right-4 bg-green-200 text-green-800 px-4 py-2 rounded-full font-bold text-sm shadow-lg">
+                        ⭐ #1 in Atlanta
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 bg-white text-green-600 px-4 py-2 rounded-full font-bold text-sm shadow-lg flex items-center">
+                        <i class="fas fa-award mr-2"></i> Best of 2023
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Professional Services</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Comprehensive lawn care and landscaping services tailored to your needs</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 services-grid">
+                <!-- Service 1 -->
+                <div class="service-item">
+                    <div class="text-green-500 mb-4 flex justify-center">
+                        <div class="bg-green-100 p-4 rounded-full">
+                            <i class="fas fa-leaf text-3xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Lawn Maintenance</h3>
+                    <p class="text-gray-600 text-center">Regular mowing, edging, fertilizing and weed control to keep your lawn looking its best all year round.</p>
+                    <div class="mt-4 text-center">
+                        <a href="#contact" class="text-green-600 font-medium inline-flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-item">
+                    <div class="text-green-500 mb-4 flex justify-center">
+                        <div class="bg-green-100 p-4 rounded-full">
+                            <i class="fas fa-tree text-3xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Sod Installation</h3>
+                    <p class="text-gray-600 text-center">Professional sod installation services to give you an instantly green, lush lawn without the wait.</p>
+                    <div class="mt-4 text-center">
+                        <a href="#contact" class="text-green-600 font-medium inline-flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-item">
+                    <div class="text-green-500 mb-4 flex justify-center">
+                        <div class="bg-green-100 p-4 rounded-full">
+                            <i class="fas fa-broom text-3xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Yard Cleanup</h3>
+                    <p class="text-gray-600 text-center">Complete yard cleanup including leaf removal, debris clearing, and seasonal preparation services.</p>
+                    <div class="mt-4 text-center">
+                        <a href="#contact" class="text-green-600 font-medium inline-flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-item">
+                    <div class="text-green-500 mb-4 flex justify-center">
+                        <div class="bg-green-100 p-4 rounded-full">
+                            <i class="fas fa-trowel text-3xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Hardscaping</h3>
+                    <p class="text-gray-600 text-center">Patios, walkways, retaining walls and other landscaping features to enhance your outdoor space.</p>
+                    <div class="mt-4 text-center">
+                        <a href="#contact" class="text-green-600 font-medium inline-flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#contact" class="bg-green-600 text-white px-8 py-3 rounded-full font-bold inline-flex items-center hover:bg-green-700 transition-colors">
+                    <i class="fas fa-calendar-check mr-2"></i> Schedule Service
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area Section -->
+    <section id="area" class="section bg-gradient-to-r from-green-600 to-green-500">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Proudly Serving Atlanta and Surrounding Areas</h2>
+                <p class="text-lg text-green-100 max-w-2xl mx-auto">We provide premium lawn care services throughout the Atlanta metro area</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 min-h-[600px]">
+                <!-- Coverage Area Card -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-green-100 order-2 lg:order-1 h-fit">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Our Coverage Area</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-700">
+                            <div class="bg-green-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-map-marker-alt text-green-600"></i>
+                            </div>
+                            <span>Atlanta Metro</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <div class="bg-green-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-map-marker-alt text-green-600"></i>
+                            </div>
+                            <span>Buckhead</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <div class="bg-green-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-map-marker-alt text-green-600"></i>
+                            </div>
+                            <span>Sandy Springs</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <div class="bg-green-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-map-marker-alt text-green-600"></i>
+                            </div>
+                            <span>Decatur</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <div class="bg-green-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-map-marker-alt text-green-600"></i>
+                            </div>
+                            <span>Vinings</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <div class="bg-green-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-map-marker-alt text-green-600"></i>
+                            </div>
+                            <span>Dunwoody</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <div class="bg-green-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-map-marker-alt text-green-600"></i>
+                            </div>
+                            <span>Chamblee</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <div class="bg-green-100 p-2 rounded-full mr-3">
+                                <i class="fas fa-map-marker-alt text-green-600"></i>
+                            </div>
+                            <span>And more!</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                        <p class="text-sm text-gray-500">We service all neighborhoods within a 20-mile radius of downtown Atlanta.</p>
+                    </div>
+                </div>
+                
+                <!-- Large Google Maps Embed -->
+                <div class="lg:col-span-2 border-4 border-white rounded-xl overflow-hidden shadow-lg order-1 lg:order-2 h-[600px]">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212270.7411490604!2d-84.5606888!3d33.7676332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5045d6993098d%3A0x66fede2f990b630b!2sAtlanta%2C%20GA!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Work Speaks for Itself</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Take a look at some of our recent lawn care and landscaping projects</p>
+            </div>
+            
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gallery-grid">
+                <!-- Gallery Card 1 -->
+                <div class="gallery-card">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
+                        <div class="relative h-64 overflow-hidden">
+                            <img 
+                                src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                alt="Professional Lawn Care Service" 
+                                class="w-full h-full object-cover"
+                            >
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-semibold text-lg text-gray-800 mb-2">Lawn Maintenance</h3>
+                            <p class="text-gray-600">Regular care for a healthy, vibrant lawn</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Card 2 -->
+                <div class="gallery-card">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
+                        <div class="relative h-64 overflow-hidden">
+                            <img 
+                                src="https://www.thespruce.com/thmb/6xRMF6_TC3vUWqcr0GT6Y4o27Jw=/3072x2048/filters:fill(auto,1)/Landscapeyard-GettyImages-157533370-5a21add20d327a00370d680f.jpg" 
+                                alt="Landscaping Project" 
+                                class="w-full h-full object-cover"
+                            >
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-semibold text-lg text-gray-800 mb-2">Landscape Design</h3>
+                            <p class="text-gray-600">Beautiful landscape design and installation</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Card 3 -->
+                <div class="gallery-card">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
+                        <div class="relative h-64 overflow-hidden">
+                            <img 
+                                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                alt="Yard Cleanup Service" 
+                                class="w-full h-full object-cover"
+                            >
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-semibold text-lg text-gray-800 mb-2">Yard Cleanup</h3>
+                            <p class="text-gray-600">Comprehensive seasonal cleanup</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Card 4 -->
+                <div class="gallery-card">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
+                        <div class="relative h-64 overflow-hidden">
+                            <img 
+                                src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                alt="Sod Installation" 
+                                class="w-full h-full object-cover"
+                            >
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-semibold text-lg text-gray-800 mb-2">Sod Installation</h3>
+                            <p class="text-gray-600">Instant lawn transformation</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Card 5 -->
+                <div class="gallery-card">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
+                        <div class="relative h-64 overflow-hidden">
+                            <img 
+                                src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                alt="Hardscaping Services" 
+                                class="w-full h-full object-cover"
+                            >
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-semibold text-lg text-gray-800 mb-2">Hardscaping</h3>
+                            <p class="text-gray-600">Custom patios and walkways</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Card 6 -->
+                <div class="gallery-card">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
+                        <div class="relative h-64 overflow-hidden">
+                            <img 
+                                src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                alt="Seasonal Maintenance" 
+                                class="w-full h-full object-cover"
+                            >
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-semibold text-lg text-gray-800 mb-2">Seasonal Care</h3>
+                            <p class="text-gray-600">Year-round maintenance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#contact" class="bg-green-600 text-white px-8 py-3 rounded-full font-bold inline-flex items-center hover:bg-green-700 transition-colors">
+                    <i class="fas fa-images mr-2"></i> See More Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-gradient-to-r from-green-600 to-green-500">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">About <span class="text-green-200">Atlanta Lawn Care</span></h2>
+                    <p class="text-lg text-green-100 mb-6">Founded in 2013, Atlanta Lawn Care & Contracting LLC has been delivering expert lawn care and landscaping services to the Atlanta community. Our team brings experience, integrity, and professionalism to every project.</p>
+                    <p class="text-lg text-green-100 mb-6">With a growing base of happy customers, we're proud to help homeowners create and maintain beautiful outdoor spaces that enhance property value and quality of life.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                        <div class="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center">
+                                <div class="bg-green-100 p-3 rounded-full mr-3">
+                                    <i class="fas fa-calendar-check text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-gray-800">10+ Years Experience</h3>
+                                    <p class="text-gray-600 text-sm">Serving Atlanta since 2013</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center">
+                                <div class="bg-green-100 p-3 rounded-full mr-3">
+                                    <i class="fas fa-shield-alt text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-gray-800">Licensed & Insured</h3>
+                                    <p class="text-gray-600 text-sm">Professional protection</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center">
+                                <div class="bg-green-100 p-3 rounded-full mr-3">
+                                    <i class="fas fa-users text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-gray-800">100+ Happy Clients</h3>
+                                    <p class="text-gray-600 text-sm">Satisfaction guaranteed</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center">
+                                <div class="bg-green-100 p-3 rounded-full mr-3">
+                                    <i class="fas fa-leaf text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-gray-800">Eco-Friendly</h3>
+                                    <p class="text-gray-600 text-sm">Sustainable practices</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="bg-white text-green-600 px-8 py-3 rounded-full font-bold inline-flex items-center hover:bg-green-50 transition-colors shadow-lg">
+                        <i class="fas fa-handshake mr-2"></i> Work With Us
+                    </a>
+                </div>
+                
+                <div class="relative order-1 lg:order-2">
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden floating-animation" style="min-height: 300px;">
+                        <img src="Images/about-us.jpg" 
+                             alt="Our team working" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-green-200 text-green-800 px-6 py-3 rounded-lg shadow-lg hidden lg:block">
+                        <div class="flex items-center">
+                            <div class="bg-white p-2 rounded-full mr-2">
+                                <i class="fas fa-award text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold">Best Lawn Care Service</p>
+                                <p class="text-sm">Atlanta Magazine 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Don't just take our word for it - hear from our satisfied customers</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700 mb-6">"Atlanta Lawn Care transformed my neglected backyard into a beautiful oasis. Their attention to detail and professionalism exceeded my expectations."</p>
+                    <div class="flex items-center">
+                        <div class="h-12 w-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah J." class="object-cover h-full w-full">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Sarah Johnson</h4>
+                            <p class="text-sm text-gray-600">Buckhead, Atlanta</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-6 rounded-lg">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"The sod installation was done perfectly and on schedule. My lawn has never looked better! Highly recommend their services."</p>
+                    <div class="flex items-center">
+                        <div class="h-12 w-12 rounded-full bg-gray-300 overflow-hidden mr-3">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="object-cover h-full w-full">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Michael T.</h4>
+                            <p class="text-sm text-gray-600">Decatur, GA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card p-6 rounded-lg">
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"Their crew is always prompt, courteous, and does fantastic work. I've been using them for 3 years and wouldn't consider anyone else."</p>
+                    <div class="flex items-center">
+                        <div class="h-12 w-12 rounded-full bg-gray-300 overflow-hidden mr-3">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Lisa R." class="object-cover h-full w-full">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Lisa R.</h4>
+                            <p class="text-sm text-gray-600">Sandy Springs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-gradient-to-r from-green-600 to-green-500 pt-24">
+        <div class="container mx-auto px-6 h-full flex flex-col justify-center">
+            <h2 class="text-4xl font-bold text-center mb-6 text-white">Let's Get Started</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Request a Free Quote</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                            <input type="text" id="name" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500" placeholder="John Smith">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <input type="email" id="email" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500" placeholder="john@example.com">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                            <input type="tel" id="phone" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500" placeholder="(404) 555-1234">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">How Can We Help?</label>
+                            <textarea id="message" rows="4" class="contact-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-lg text-lg button-scale transition">Request Free Quote</button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-green-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-1">Call Us</h3>
+                                <a href="tel:+14045551234" class="text-gray-600 hover:text-green-600 transition">(404) 555-1234</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-green-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-1">Email Us</h3>
+                                <a href="mailto:contact@atlantalawncare.com" class="text-gray-600 hover:text-green-600 transition">contact@atlantalawncare.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-green-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-1">Location</h3>
+                                <p class="text-gray-600">123 Greenfield Ave<br>Atlanta, GA 30305</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hours -->
+                    <div class="mt-12 pt-8 border-t border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Business Hours</h3>
+                        <ul class="space-y-2">
+                            <li class="flex justify-between text-gray-600">
+                                <span>Monday - Friday</span>
+                                <span class="font-medium">7:00 AM - 5:00 PM</span>
+                            </li>
+                            <li class="flex justify-between text-gray-600">
+                                <span>Saturday</span>
+                                <span class="font-medium">9:00 AM - 1:00 PM</span>
+                            </li>
+                            <li class="flex justify-between text-gray-600">
+                                <span>Sunday</span>
+                                <span class="font-medium">Closed</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+     <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div class="h-10 w-10 mr-3 bg-green-600 rounded-full p-2 flex items-center justify-center">
+                            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
+                                <!-- Lawn Mower Body -->
+                                <rect x="12" y="35" width="40" height="12" rx="6" fill="#ffffff"/>
+                                <!-- Handle -->
+                                <rect x="30" y="20" width="4" height="20" rx="2" fill="#ffffff"/>
+                                <rect x="25" y="15" width="14" height="3" rx="1.5" fill="#ffffff"/>
+                                <!-- Wheels -->
+                                <circle cx="20" cy="50" r="5" fill="#ffffff"/>
+                                <circle cx="44" cy="50" r="5" fill="#ffffff"/>
+                                <!-- Grass Catcher -->
+                                <rect x="8" y="30" width="8" height="8" rx="4" fill="#ffffff"/>
+                                <!-- Cutting Deck -->
+                                <rect x="16" y="40" width="32" height="2" rx="1" fill="#ffffff"/>
+                            </svg>
+                        </div>
+                        <span class="text-2xl font-bold">Atlanta <span class="text-green-400">Lawn Care</span></span>
+                    </div>
+                    <p class="text-gray-300 mb-4 max-w-md">
+                        Professional lawn care and contracting services in Atlanta. Transform your outdoor space with our expert team.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition">
+                            <i class="fab fa-google text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Business Hours -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-green-400">Business Hours</h3>
+                    <div class="space-y-2 text-gray-300">
+                        <div class="flex justify-between">
+                            <span>Monday</span>
+                            <span>6:30 AM–6:30 PM</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Tuesday</span>
+                            <span>6:30 AM–6:30 PM</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Wednesday</span>
+                            <span>6:30 AM–6:30 PM</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Thursday</span>
+                            <span>6:30 AM–6:30 PM</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Friday</span>
+                            <span>6:30 AM–6:30 PM</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Saturday</span>
+                            <span>8 AM–4 PM</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Sunday</span>
+                            <span class="text-red-400">Closed</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-green-400">Contact Us</h3>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-green-400 mr-3"></i>
+                            <span>(555) 123-4567</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-green-400 mr-3"></i>
+                            <span>info@atlantalawncare.com</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-green-400 mr-3 mt-1"></i>
+                            <span>Atlanta, GA<br>& Surrounding Areas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">
+                        © 2024 Atlanta Lawn Care & Contracting LLC. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition">Terms of Service</a>
+                        <a href="#contact" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full transition">
+                            Get Free Quote
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            // Single event listener for mobile menu toggle
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Hide mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        // Smooth scroll to target section
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Enhanced navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    navbar.style.background = 'rgba(22, 163, 74, 0.95)';
+                    navbar.classList.add('backdrop-blur-sm');
+                } else {
+                    navbar.style.background = 'rgb(22, 163, 74)';
+                    navbar.classList.remove('backdrop-blur-sm');
+                }
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+            
+            // Close mobile menu on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+            
+            // Gallery functionality
+            const galleryContainer = document.getElementById('gallery-container');
+            if (galleryContainer) {
+                const galleryTrack = document.querySelector('.gallery-track');
+                const galleryCards = document.querySelectorAll('.gallery-card');
+                const prevBtn = document.getElementById('gallery-prev');
+                const nextBtn = document.getElementById('gallery-next');
+                const indicators = document.querySelectorAll('.gallery-indicator');
+                
+                if (galleryTrack && galleryCards.length > 0) {
+                    let currentSlide = 0;
+                    const totalSlides = Math.ceil(galleryCards.length / 3);
+                    
+                    function updateSlider() {
+                        const translateX = currentSlide * -100;
+                        galleryTrack.style.transform = `translateX(${translateX}%)`;
+                        
+                        // Update button states
+                        if (prevBtn) {
+                            prevBtn.disabled = currentSlide === 0;
+                            if (prevBtn.disabled) {
+                                prevBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                                prevBtn.classList.remove('hover:bg-green-700');
+                            } else {
+                                prevBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                                prevBtn.classList.add('hover:bg-green-700');
+                            }
+                        }
+                        
+                        if (nextBtn) {
+                            nextBtn.disabled = currentSlide >= totalSlides - 1;
+                            if (nextBtn.disabled) {
+                                nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                                nextBtn.classList.remove('hover:bg-green-700');
+                            } else {
+                                nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                                nextBtn.classList.add('hover:bg-green-700');
+                            }
+                        }
+                        
+                        // Update indicators
+                        indicators.forEach((indicator, index) => {
+                            if (index === currentSlide) {
+                                indicator.classList.remove('bg-gray-300');
+                                indicator.classList.add('bg-green-600');
+                            } else {
+                                indicator.classList.remove('bg-green-600');
+                                indicator.classList.add('bg-gray-300');
+                            }
+                        });
+                    }
+                    
+                    // Next button click
+                    if (nextBtn) {
+                        nextBtn.addEventListener('click', function() {
+                            if (currentSlide < totalSlides - 1) {
+                                currentSlide++;
+                                updateSlider();
+                            }
+                        });
+                    }
+                    
+                    // Previous button click
+                    if (prevBtn) {
+                        prevBtn.addEventListener('click', function() {
+                            if (currentSlide > 0) {
+                                currentSlide--;
+                                updateSlider();
+                            }
+                        });
+                    }
+                    
+                    // Indicator clicks
+                    indicators.forEach((indicator, index) => {
+                        indicator.addEventListener('click', function() {
+                            currentSlide = index;
+                            updateSlider();
+                        });
+                    });
+                    
+                    // Initialize slider
+                    updateSlider();
+                    
+                    // Auto-play functionality
+                    let autoPlayInterval;
+                    
+                    function startAutoPlay() {
+                        autoPlayInterval = setInterval(() => {
+                            if (currentSlide < totalSlides - 1) {
+                                currentSlide++;
+                            } else {
+                                currentSlide = 0;
+                            }
+                            updateSlider();
+                        }, 5000);
+                    }
+                    
+                    function stopAutoPlay() {
+                        clearInterval(autoPlayInterval);
+                    }
+                    
+                    // Start auto-play
+                    startAutoPlay();
+                    
+                    // Pause auto-play on hover
+                    galleryContainer.addEventListener('mouseenter', stopAutoPlay);
+                    galleryContainer.addEventListener('mouseleave', startAutoPlay);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+        
